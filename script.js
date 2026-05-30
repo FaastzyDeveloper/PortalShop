@@ -8,7 +8,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCk9vUV2hwU8UwdnVJl9qOUlqQIlqxxA_A"
+    apiKey: "AIzaSyCk9vUV2hwU8UwdnVJl9qOUlqQIlqxxA_A",
     authDomain: "faastshop.firebaseapp.com",
     projectId: "faastshop",
     storageBucket: "faastshop.firebasestorage.app",
