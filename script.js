@@ -8,13 +8,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCk9vUV2hwU8UwdnVJl9qOUlqQIlqxxA_A",
-  authDomain: "faastshop.firebaseapp.com",
-  projectId: "faastshop",
-  storageBucket: "faastshop.firebasestorage.app",
-  messagingSenderId: "710859153646",
-  appId: "1:710859153646:web:919cc9223a0ecbaa1953ff",
-  measurementId: "G-E911F0R0CG"
+    apiKey: "AIzaSyCk9vUV2hwU8UwdnVJl9qOUlqQIlqxxA_A",
+    authDomain: "faastshop.firebaseapp.com",
+    projectId: "faastshop",
+    storageBucket: "faastshop.firebasestorage.app",
+    messagingSenderId: "710859153646",
+    appId: "1:710859153646:web:919cc9223a0ecbaa1953ff",
+    measurementId: "G-E911F0R0CG"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -54,8 +54,19 @@ onAuthStateChanged(auth, (user) => {
         loginBtn.classList.add("hidden");
         userBox.classList.remove("hidden");
 
-        if (userPhoto) userPhoto.src = user.photoURL;
-        if (userName) userName.textContent = user.displayName;
+        const ownerEmail = "miguel.henrique17.pkxd@gmail.com";
+
+        if (userPhoto) {
+            userPhoto.src = user.photoURL;
+        }
+
+        if (userName) {
+            if (user.email === ownerEmail) {
+                userName.textContent = `${user.displayName} 👑 Dono`;
+            } else {
+                userName.textContent = `${user.displayName} • Membro`;
+            }
+        }
     } else {
         loginBtn.classList.remove("hidden");
         userBox.classList.add("hidden");
