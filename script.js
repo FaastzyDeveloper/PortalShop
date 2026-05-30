@@ -51,6 +51,9 @@ onAuthStateChanged(auth, (user) => {
     if (!loginBtn || !userBox) return;
 
     if (user) {
+
+        console.log("EMAIL:", user.email);
+
         loginBtn.classList.add("hidden");
         userBox.classList.remove("hidden");
 
