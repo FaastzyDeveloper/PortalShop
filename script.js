@@ -21,11 +21,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+const ownerEmail = "miguel.henrique17.pkxd@gmail.com";
+
 const loginBtn = document.getElementById("loginBtn");
 const logoutBtn = document.getElementById("logoutBtn");
 const userBox = document.getElementById("userBox");
 const userPhoto = document.getElementById("userPhoto");
 const userName = document.getElementById("userName");
+const staffMenu = document.getElementById("staffMenu");
+const staffPanel = document.getElementById("staff");
 
 if (loginBtn) {
     loginBtn.addEventListener("click", async () => {
@@ -48,6 +52,8 @@ if (logoutBtn) {
 }
 
 onAuthStateChanged(auth, (user) => {
+    console.log("EMAIL LOGADO:", user?.email);
+
     if (!loginBtn || !userBox) return;
 
     if (user) {
@@ -55,10 +61,22 @@ onAuthStateChanged(auth, (user) => {
         userBox.classList.remove("hidden");
 
         if (userPhoto) userPhoto.src = user.photoURL;
-        if (userName) userName.textContent = user.displayName;
+
+        if (user.email === ownerEmail) {
+            if (userName) userName.textContent = `${user.displayName} 👑 Dono`;
+            if (staffMenu) staffMenu.classList.remove("hidden");
+            if (staffPanel) staffPanel.classList.remove("hidden");
+        } else {
+            if (userName) userName.textContent = `${user.displayName} • Membro`;
+            if (staffMenu) staffMenu.classList.add("hidden");
+            if (staffPanel) staffPanel.classList.add("hidden");
+        }
     } else {
         loginBtn.classList.remove("hidden");
         userBox.classList.add("hidden");
+
+        if (staffMenu) staffMenu.classList.add("hidden");
+        if (staffPanel) staffPanel.classList.add("hidden");
     }
 });
 
