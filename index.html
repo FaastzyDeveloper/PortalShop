@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Community</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="brand">
+        <img src="logo.png" alt="Logo">
+        <span>Portal Community</span>
+        <div class="verified">✓</div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#atualizacoes">Atualizações</a>
+        <a href="#loja">Loja</a>
+        <a href="#equipe">Equipe</a>
+    </div>
+
+    <div class="auth-area">
+        <button id="loginBtn" class="login-btn">Entrar com Google</button>
+
+        <div id="userBox" class="user-box hidden">
+            <img id="userPhoto" src="" alt="Usuário">
+            <span id="userName"></span>
+            <button id="logoutBtn">Sair</button>
+        </div>
+    </div>
+</nav>
+
+<section id="inicio" class="hero">
+    <div class="hero-text">
+        <h1>Sua comunidade,<br>seu espaço.</h1>
+        <p>Participe da Portal Community e acompanhe nossos projetos, novidades e conteúdos.</p>
+
+        <div class="hero-buttons">
+            <a href="https://discord.gg/uWrWsf6C" target="_blank" class="btn primary">Entrar no Discord</a>
+            <a href="#loja" class="btn secondary">Ver loja</a>
+        </div>
+
+        <div class="dev-alert">
+            🚧 Site em desenvolvimento. Algumas áreas ainda estão sendo preparadas e podem mudar em breve.
+        </div>
+    </div>
+
+    <div class="hero-logo">
+        <img src="logo.png" alt="Logo Portal Community">
+    </div>
+</section>
+
+<section id="sobre" class="about">
+    <div class="about-card">
+        <span class="tag">SOBRE NÓS</span>
+        <h2>O que é a Portal Community?</h2>
+        <p>
+            A Portal Community é uma comunidade criada para reunir pessoas, projetos e ideias em um só lugar.
+            Nosso objetivo é construir um ambiente organizado, ativo e acolhedor, onde membros possam acompanhar
+            novidades, participar da comunidade e conhecer futuros serviços e produtos.
+        </p>
+
+        <div class="about-grid">
+            <div>
+                <h3>Comunidade</h3>
+                <p>Um espaço para interação, novidades e participação dos membros.</p>
+            </div>
+
+            <div>
+                <h3>Projetos</h3>
+                <p>Novos projetos e conteúdos serão apresentados conforme a comunidade crescer.</p>
+            </div>
+
+            <div>
+                <h3>Loja</h3>
+                <p>Produtos e serviços serão adicionados com cuidado e transparência.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat-card">
+        <strong>17</strong>
+        <span>Membros</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>1</strong>
+        <span>Produto</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>3</strong>
+        <span>Membros na equipe</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>2026</strong>
+        <span>Fundação</span>
+    </div>
+</section>
+
+<section id="atualizacoes" class="updates">
+    <div class="updates-header">
+        <span class="tag">NOVIDADES</span>
+        <h2>Últimas Atualizações</h2>
+        <p>Acompanhe as principais mudanças e novidades da Portal Community.</p>
+    </div>
+
+    <div class="update-list">
+        <div class="update-item">
+            <span>30/05/2026</span>
+            <h3>Site oficial em desenvolvimento</h3>
+            <p>O site da Portal Community começou a ser desenvolvido com páginas para comunidade, loja e equipe.</p>
+        </div>
+
+        <div class="update-item">
+            <span>30/05/2026</span>
+            <h3>Loja adicionada ao site</h3>
+            <p>A área da loja foi adicionada com o primeiro produto em desenvolvimento: Setup BedWars Premium.</p>
+        </div>
+
+        <div class="update-item">
+            <span>30/05/2026</span>
+            <h3>Equipe atualizada</h3>
+            <p>A equipe da comunidade foi atualizada com os membros responsáveis pela organização interna.</p>
+        </div>
+    </div>
+</section>
+
+<section id="loja" class="store">
+    <div class="store-top">
+        <div>
+            <h2>Loja</h2>
+            <p>Confira os produtos da Portal Community.</p>
+        </div>
+
+        <div class="search-box">
+            <span>🔎</span>
+            <input type="text" id="searchInput" placeholder="Buscar produto...">
+        </div>
+    </div>
+
+    <div class="product-card" data-name="setup bedwars premium servidor bedwars">
+        <div class="product-image">
+            <span>BED<br>WARS</span>
+        </div>
+
+        <div class="product-info">
+            <span class="tag">SERVIDOR</span>
+            <h3>Setup BedWars Premium</h3>
+            <p>Servidor completo de BedWars com lobby, mapas, configurações organizadas e sistemas preparados.</p>
+
+            <div class="features">
+                <span>Entrega rápida</span>
+                <span>Arquivos organizados</span>
+                <span>Suporte para instalação</span>
+            </div>
+
+            <div class="status">🚧 Produto em desenvolvimento</div>
+        </div>
+
+        <div class="product-price">
+            <small>Preço previsto</small>
+            <strong>R$ 72,00</strong>
+            <button class="btn primary details-btn" onclick="abrirDetalhes()">Ver detalhes</button>
+        </div>
+    </div>
+
+    <p class="no-results" id="noResults">Nenhum produto encontrado.</p>
+
+    <div class="store-warning">
+        ⚠️ Este produto ainda não está disponível para venda. Informações, recursos e preço podem mudar até o lançamento.
+    </div>
+</section>
+
+<section id="equipe" class="team">
+    <div class="team-header">
+        <span class="tag">EQUIPE</span>
+        <h2>Equipe da Portal</h2>
+        <p>Responsáveis pela organização e desenvolvimento da comunidade.</p>
+    </div>
+
+    <div class="team-list">
+        <div class="team-member">
+            <div class="member-avatar">F</div>
+            <div class="member-info">
+                <h3>Faast</h3>
+                <span>Diretor</span>
+                <p>Responsável pela administração geral, decisões principais e direção da comunidade.</p>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <div class="member-avatar">T</div>
+            <div class="member-info">
+                <h3>Tsuki (Edu)</h3>
+                <span>Diretor</span>
+                <p>Responsável pela administração da comunidade, coordenação dos projetos e auxílio nas decisões gerais.</p>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <div class="member-avatar">E</div>
+            <div class="member-info">
+                <h3>eternofantz</h3>
+                <span>Coordenador</span>
+                <p>Responsável por auxiliar na organização, suporte e administração da comunidade.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal" id="productModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="fecharDetalhes()">×</button>
+
+        <span class="tag">DETALHES DO PRODUTO</span>
+        <h2>Setup BedWars Premium</h2>
+
+        <p class="modal-desc">
+            Produto em desenvolvimento. O setup será preparado para quem deseja iniciar um servidor de BedWars
+            com uma base organizada e pronta para personalização.
+        </p>
+
+        <div class="modal-info">
+            <div>
+                <small>Status</small>
+                <strong>Em desenvolvimento</strong>
+            </div>
+
+            <div>
+                <small>Preço previsto</small>
+                <strong>R$ 72,00</strong>
+            </div>
+        </div>
+
+        <div class="modal-features">
+            <span>Lobby configurado</span>
+            <span>Mapas inclusos</span>
+            <span>Arquivos organizados</span>
+            <span>Suporte para instalação</span>
+            <span>Configurações prontas</span>
+            <span>Entrega após lançamento</span>
+        </div>
+
+        <div class="modal-warning">
+            ⚠️ As compras ainda não estão disponíveis. Acompanhe o desenvolvimento pelo Discord.
+        </div>
+
+        <div class="modal-buttons">
+            <a href="https://discord.gg/uWrWsf6C" target="_blank" class="btn primary">Entrar no Discord</a>
+            <button class="btn secondary" onclick="fecharDetalhes()">Fechar</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Portal Community. Todos os direitos reservados.
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
